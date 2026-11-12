@@ -35,4 +35,6 @@ docker run --rm --platform linux/amd64 -v "$PWD/custom_components:/github/worksp
 
 ## Releasing
 
-Bump `version` in `manifest.json` and push to `main`; `release.yml` tags `v<version>` and creates the release.
+Bump `version` in `manifest.json` and merge to `main`; `release.yml` tags `v<version>` and creates the release. If that run fails, rerun it from the latest `main` with `gh workflow run release.yml`. It skips a version that's already tagged.
+
+`main` needs a pull request with one approval; admins can push directly.
