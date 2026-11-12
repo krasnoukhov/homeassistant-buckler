@@ -10,14 +10,14 @@ from homeassistant.core import HomeAssistant
 
 from custom_components.buckler.const import DOMAIN
 
-SERIAL = "4365_sxy15l"
-RELAY_ID = "6a957b02f77f1e42d2194e5c"
+SERIAL = "1234_abcdef"
+RELAY_ID = "0123456789abcdef01234567"
 USER = {
     "_id": "user-1",
     "username": "Dmytro",
     "email": "user@example.com",
     "relays": [
-        {"index": 9999, "name": "IFLH", "serialNumber": SERIAL, "_id": RELAY_ID}
+        {"index": 9999, "name": "Home", "serialNumber": SERIAL, "_id": RELAY_ID}
     ],
 }
 
@@ -25,7 +25,7 @@ USER = {
 _RELAY = {
     "_id": RELAY_ID,
     "serialNumber": SERIAL,
-    "name": "IFLH",
+    "name": "Home",
     "typeRelay": "KMP_121_40",
     "firmware": "kmp_121_40_v3_260729d",
     "lastOnlineStatus": True,

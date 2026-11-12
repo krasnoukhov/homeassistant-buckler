@@ -11,7 +11,7 @@ from custom_components.buckler.const import UPDATE_INTERVAL
 
 from . import RELAY_ID, add_entry, log
 
-EVENT = "event.iflh_log"
+EVENT = "event.home_log"
 
 
 async def _setup(hass: HomeAssistant) -> None:
@@ -31,17 +31,17 @@ async def test_settings_in_ha_units(hass: HomeAssistant, mock_api) -> None:
     """mA shows as A, W as kW, category 7 as curve D."""
     await _setup(hass)
 
-    assert hass.states.get("number.iflh_turn_on_delay").state == "10.0"
-    assert hass.states.get("number.iflh_voltage_minimum").state == "190.0"
-    assert hass.states.get("number.iflh_voltage_maximum").state == "253.0"
-    assert hass.states.get("number.iflh_current_maximum").state == "32.0"
-    assert hass.states.get("number.iflh_power_maximum").state == "12.0"
-    assert hass.states.get("number.iflh_frequency_minimum").state == "49.5"
-    assert hass.states.get("select.iflh_current_trip_curve").state == "d"
-    assert hass.states.get("switch.iflh_voltage_protection").state == "on"
-    assert hass.states.get("switch.iflh_current_protection").state == "off"
-    assert hass.states.get("switch.iflh_auto_turn_on").state == "on"
-    assert hass.states.get("binary_sensor.iflh_cloud_connection").state == "on"
+    assert hass.states.get("number.home_turn_on_delay").state == "10.0"
+    assert hass.states.get("number.home_voltage_minimum").state == "190.0"
+    assert hass.states.get("number.home_voltage_maximum").state == "253.0"
+    assert hass.states.get("number.home_current_maximum").state == "32.0"
+    assert hass.states.get("number.home_power_maximum").state == "12.0"
+    assert hass.states.get("number.home_frequency_minimum").state == "49.5"
+    assert hass.states.get("select.home_current_trip_curve").state == "d"
+    assert hass.states.get("switch.home_voltage_protection").state == "on"
+    assert hass.states.get("switch.home_current_protection").state == "off"
+    assert hass.states.get("switch.home_auto_turn_on").state == "on"
+    assert hass.states.get("binary_sensor.home_cloud_connection").state == "on"
 
 
 async def test_new_log_entries_fire_events(hass: HomeAssistant, mock_api) -> None:
@@ -89,7 +89,7 @@ async def test_number_saves_whole_section_in_cloud_units(
     await hass.services.async_call(
         "number",
         "set_value",
-        {"entity_id": "number.iflh_current_maximum", "value": 25.5},
+        {"entity_id": "number.home_current_maximum", "value": 25.5},
         blocking=True,
     )
     mock_api.save.assert_awaited_once_with(
@@ -100,7 +100,7 @@ async def test_number_saves_whole_section_in_cloud_units(
     await hass.services.async_call(
         "number",
         "set_value",
-        {"entity_id": "number.iflh_frequency_minimum", "value": 49},
+        {"entity_id": "number.home_frequency_minimum", "value": 49},
         blocking=True,
     )
     mock_api.save.assert_awaited_once_with(
@@ -114,7 +114,7 @@ async def test_switch_and_select_save(hass: HomeAssistant, mock_api) -> None:
     await hass.services.async_call(
         "switch",
         "turn_on",
-        {"entity_id": "switch.iflh_current_protection"},
+        {"entity_id": "switch.home_current_protection"},
         blocking=True,
     )
     mock_api.save.assert_awaited_once_with(
@@ -125,7 +125,7 @@ async def test_switch_and_select_save(hass: HomeAssistant, mock_api) -> None:
     await hass.services.async_call(
         "select",
         "select_option",
-        {"entity_id": "select.iflh_current_trip_curve", "option": "c"},
+        {"entity_id": "select.home_current_trip_curve", "option": "c"},
         blocking=True,
     )
     mock_api.save.assert_awaited_once_with(
@@ -145,7 +145,7 @@ async def test_save_reads_back_from_cloud(hass: HomeAssistant, mock_api) -> None
     await hass.services.async_call(
         "number",
         "set_value",
-        {"entity_id": "number.iflh_voltage_minimum", "value": 180},
+        {"entity_id": "number.home_voltage_minimum", "value": 180},
         blocking=True,
     )
-    assert hass.states.get("number.iflh_voltage_minimum").state == "180.0"
+    assert hass.states.get("number.home_voltage_minimum").state == "180.0"
