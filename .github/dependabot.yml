@@ -9,6 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      # 2.4 writes the changelog to GITHUB_OUTPUT with newlines as %0A
+      - dependency-name: "heinrichreimer/github-changelog-generator-action"
+        versions: ["2.4"]
   # Keeps tests on a current Home Assistant. The rest of requirements_test.txt
   # follows manifest.json, which Dependabot doesn't read.
   - package-ecosystem: "pip"
