@@ -6,6 +6,10 @@ on:
     paths:
       - custom_components/*/manifest.json
 
+# New repos give the workflow token read-only access by default
+permissions:
+  contents: write
+
 jobs:
   auto-release:
     name: "Auto Release"
