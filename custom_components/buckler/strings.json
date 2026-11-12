@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Log in with your buckler.pw account.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Log in again",
+        "description": "buckler.pw no longer accepts the password for {email}.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong email or password",
+      "cannot_connect": "Can't reach buckler.pw"
+    },
+    "abort": {
+      "already_configured": "This account is already set up",
+      "reauth_successful": "Logged in again"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "cloud_connection": {
+        "name": "Cloud connection"
+      }
+    },
+    "event": {
+      "log": {
+        "name": "Log",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "button": "Button pressed",
+              "frequency": "Frequency out of range",
+              "offline": "Went offline",
+              "online": "Came online",
+              "other": "Other",
+              "overcurrent": "Overcurrent",
+              "overheat": "Overheat",
+              "overvoltage": "Overvoltage",
+              "power_limit": "Power limit",
+              "power_lost": "Lost power",
+              "power_restored": "Power restored",
+              "protection_ok": "Protection back to normal",
+              "relay_off": "Relay off",
+              "relay_on": "Relay on",
+              "residual_current": "Residual current",
+              "schedule": "Schedule changed",
+              "settings_changed": "Settings changed",
+              "turned_off": "Turned off by user",
+              "turned_on": "Turned on by user",
+              "undervoltage": "Undervoltage"
+            }
+          },
+          "code": {
+            "name": "Code"
+          },
+          "message": {
+            "name": "Message"
+          },
+          "type": {
+            "name": "Type"
+          },
+          "time": {
+            "name": "Time"
+          }
+        }
+      }
+    },
+    "number": {
+      "turn_on_delay": {
+        "name": "Turn-on delay"
+      },
+      "voltage_max": {
+        "name": "Voltage maximum"
+      },
+      "voltage_min": {
+        "name": "Voltage minimum"
+      },
+      "voltage_hysteresis": {
+        "name": "Voltage hysteresis"
+      },
+      "current_max": {
+        "name": "Current maximum"
+      },
+      "power_max": {
+        "name": "Power maximum"
+      },
+      "frequency_min": {
+        "name": "Frequency minimum"
+      },
+      "frequency_max": {
+        "name": "Frequency maximum"
+      },
+      "temperature_max": {
+        "name": "Temperature maximum"
+      }
+    },
+    "select": {
+      "current_curve": {
+        "name": "Current trip curve",
+        "state": {
+          "a": "A",
+          "b": "B",
+          "c": "C",
+          "d": "D"
+        }
+      }
+    },
+    "switch": {
+      "auto_turn_on": {
+        "name": "Auto turn-on"
+      },
+      "voltage_protection": {
+        "name": "Voltage protection"
+      },
+      "current_protection": {
+        "name": "Current protection"
+      },
+      "power_protection": {
+        "name": "Power protection"
+      },
+      "frequency_protection": {
+        "name": "Frequency protection"
+      },
+      "temperature_protection": {
+        "name": "Temperature protection"
+      }
+    }
+  }
+}

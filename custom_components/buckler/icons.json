@@ -1,0 +1,65 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "cloud_connection": {
+        "default": "mdi:cloud-check-outline",
+        "state": {
+          "off": "mdi:cloud-off-outline"
+        }
+      }
+    },
+    "event": {
+      "log": {
+        "default": "mdi:text-box-outline",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "undervoltage": "mdi:flash-triangle-outline",
+              "overvoltage": "mdi:flash-triangle",
+              "overcurrent": "mdi:current-ac",
+              "power_lost": "mdi:power-plug-off-outline",
+              "power_restored": "mdi:power-plug-outline",
+              "offline": "mdi:cloud-off-outline",
+              "online": "mdi:cloud-check-outline",
+              "settings_changed": "mdi:cog-outline",
+              "overheat": "mdi:thermometer-alert"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "turn_on_delay": {
+        "default": "mdi:timer-outline"
+      },
+      "voltage_hysteresis": {
+        "default": "mdi:sine-wave"
+      }
+    },
+    "select": {
+      "current_curve": {
+        "default": "mdi:chart-bell-curve-cumulative"
+      }
+    },
+    "switch": {
+      "auto_turn_on": {
+        "default": "mdi:restart"
+      },
+      "voltage_protection": {
+        "default": "mdi:shield-outline"
+      },
+      "current_protection": {
+        "default": "mdi:shield-outline"
+      },
+      "power_protection": {
+        "default": "mdi:shield-outline"
+      },
+      "frequency_protection": {
+        "default": "mdi:shield-outline"
+      },
+      "temperature_protection": {
+        "default": "mdi:shield-outline"
+      }
+    }
+  }
+}

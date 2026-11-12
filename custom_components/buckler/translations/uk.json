@@ -1,0 +1,138 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Увійдіть з обліковим записом buckler.pw.",
+        "data": {
+          "email": "Email",
+          "password": "Пароль"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Увійдіть знову",
+        "description": "buckler.pw більше не приймає пароль для {email}.",
+        "data": {
+          "password": "Пароль"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Неправильний email або пароль",
+      "cannot_connect": "Не вдалося з'єднатися з buckler.pw"
+    },
+    "abort": {
+      "already_configured": "Цей обліковий запис уже додано",
+      "reauth_successful": "Вхід виконано"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "cloud_connection": {
+        "name": "З'єднання з хмарою"
+      }
+    },
+    "event": {
+      "log": {
+        "name": "Журнал",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "button": "Натискання кнопки",
+              "frequency": "Частота поза межами",
+              "offline": "Офлайн",
+              "online": "Онлайн",
+              "other": "Інше",
+              "overcurrent": "Перевищення струму",
+              "overheat": "Перегрів",
+              "overvoltage": "Перевищення напруги",
+              "power_limit": "Перевищення потужності",
+              "power_lost": "Зникнення живлення",
+              "power_restored": "Поява живлення",
+              "protection_ok": "Захист у нормі",
+              "relay_off": "Реле вимкнено",
+              "relay_on": "Реле увімкнено",
+              "residual_current": "Диференційний струм",
+              "schedule": "Зміна розкладу",
+              "settings_changed": "Зміна налаштувань",
+              "turned_off": "Вимкнено користувачем",
+              "turned_on": "Увімкнено користувачем",
+              "undervoltage": "Зменшення напруги"
+            }
+          },
+          "code": {
+            "name": "Код"
+          },
+          "message": {
+            "name": "Повідомлення"
+          },
+          "type": {
+            "name": "Тип"
+          },
+          "time": {
+            "name": "Час"
+          }
+        }
+      }
+    },
+    "number": {
+      "turn_on_delay": {
+        "name": "Затримка увімкнення"
+      },
+      "voltage_max": {
+        "name": "Максимальна напруга"
+      },
+      "voltage_min": {
+        "name": "Мінімальна напруга"
+      },
+      "voltage_hysteresis": {
+        "name": "Гістерезис напруги"
+      },
+      "current_max": {
+        "name": "Максимальний струм"
+      },
+      "power_max": {
+        "name": "Максимальна потужність"
+      },
+      "frequency_min": {
+        "name": "Мінімальна частота"
+      },
+      "frequency_max": {
+        "name": "Максимальна частота"
+      },
+      "temperature_max": {
+        "name": "Максимальна температура"
+      }
+    },
+    "select": {
+      "current_curve": {
+        "name": "Характеристика струму",
+        "state": {
+          "a": "A",
+          "b": "B",
+          "c": "C",
+          "d": "D"
+        }
+      }
+    },
+    "switch": {
+      "auto_turn_on": {
+        "name": "Автоматичне увімкнення"
+      },
+      "voltage_protection": {
+        "name": "Захист за напругою"
+      },
+      "current_protection": {
+        "name": "Захист за струмом"
+      },
+      "power_protection": {
+        "name": "Захист за потужністю"
+      },
+      "frequency_protection": {
+        "name": "Захист за частотою"
+      },
+      "temperature_protection": {
+        "name": "Захист за температурою"
+      }
+    }
+  }
+}

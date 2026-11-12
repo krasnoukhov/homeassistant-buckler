@@ -1,0 +1,13 @@
+{
+  "domain": "buckler",
+  "name": "Buckler",
+  "codeowners": ["@krasnoukhov"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/krasnoukhov/homeassistant-buckler",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/krasnoukhov/homeassistant-buckler/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
