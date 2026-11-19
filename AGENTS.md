@@ -28,8 +28,7 @@ Nothing here is documented by Buckler. It was read from the web app's bundle (`h
 ## Commands
 
 ```bash
-uv venv --python 3.14 && uv pip install -r requirements_test.txt black
-.venv/bin/black . --fast && .venv/bin/pytest
+uv run ruff format && uv run ruff check --fix && uv run pytest
 docker run --rm --platform linux/amd64 -v "$PWD/custom_components:/github/workspace/custom_components" ghcr.io/home-assistant/hassfest
 ```
 
