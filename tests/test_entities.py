@@ -52,8 +52,10 @@ async def test_new_log_entries_fire_events(hass: HomeAssistant, mock_api) -> Non
     fired = []
     hass.bus.async_listen(
         "state_changed",
-        lambda event: event.data["entity_id"] == EVENT
-        and fired.append(event.data["new_state"].attributes),
+        lambda event: (
+            event.data["entity_id"] == EVENT
+            and fired.append(event.data["new_state"].attributes)
+        ),
     )
     mock_api.logs = [
         log("b", 122, "2026-11-12T14:13:55.000Z", "DOWN_VRMS", "📉 Зменшення напруги"),

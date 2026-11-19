@@ -22,7 +22,7 @@ EVENT_TYPES_BY_CODE: dict[int, str] = {
     **{code: "protection_ok" for code in range(130, 140)},
     140: "overcurrent",
     141: "overcurrent",
-    # 151 OVER_CURRENT_OIA seen on a КМР-121-40; 150s look like per-line instant current
+    # 151 OVER_CURRENT_OIA seen on a КМР-121-40; 150s look like per-line instant current  # noqa: RUF003
     **{code: "overcurrent" for code in range(150, 160)},
     200: "power_lost",
     201: "power_restored",
