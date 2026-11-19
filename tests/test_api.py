@@ -9,7 +9,6 @@ from unittest.mock import patch
 
 import aiohttp
 import pytest
-
 from pytest_homeassistant_custom_component.test_util.aiohttp import (
     AiohttpClientMockResponse,
 )

@@ -180,7 +180,7 @@ class BucklerNumber(BucklerEntity, NumberEntity):
     async def async_set_native_value(self, value: float) -> None:
         d = self.entity_description
         if d.scale != 1 or d.native_step >= 1:
-            cloud: float = int(round(value * d.scale))
+            cloud: float = round(value * d.scale)
         else:
             cloud = round(value, 1)
         await self.coordinator.async_save(self._serial, d.section, {d.field: cloud})

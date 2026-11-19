@@ -32,10 +32,10 @@ class BucklerCurveSelect(BucklerEntity, SelectEntity):
     """The current protection's trip curve, B/C/D as on breakers."""
 
     _attr_entity_category = EntityCategory.CONFIG
-    _attr_options = list(CURVES.values())
 
     def __init__(self, coordinator: BucklerCoordinator, serial: str) -> None:
         super().__init__(coordinator, serial, "current_curve")
+        self._attr_options = list(CURVES.values())
 
     @property
     def current_option(self) -> str | None:
