@@ -1,8 +1,8 @@
 [project]
 name = "homeassistant-buckler"
 requires-python = ">=3.14.2"
-# Placeholder; the real version lives in manifest.json
-version = "0"
+# Real version lives in manifest.json
+dynamic = ["version"]
 
 [dependency-groups]
 dev = [
@@ -13,6 +13,11 @@ lint = ["ruff==0.17.5"]
 
 [tool.uv]
 package = false
+
+# Nothing to package; stops setuptools tripping over images/ when uv reads
+# the dynamic version
+[tool.setuptools]
+packages = []
 
 [tool.ruff]
 # Must not exceed the Python of the minimum HA in hacs.json

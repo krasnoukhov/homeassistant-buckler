@@ -1276,7 +1276,6 @@ wheels = [
 
 [[package]]
 name = "homeassistant-buckler"
-version = "0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
